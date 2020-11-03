@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+.Header {
+    width: 100%;
+    color: #fff;
+    position: fixed;
+    z-index: 100;
+}
+
+.Header__inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include sp {
+        padding: 0 15px;
+    }
+}
+
+.Header__title {
+    width: calc(100% - 40%);
+    padding: 15px 0;
+
+    @include sp {
+        width: calc(100% - 10%);
+    }
+}
+
+.Header__link {
+    font-size: 26px;
+    font-family: Noto serif;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+
+.hidden {
+    background-color: #282f35;
+}

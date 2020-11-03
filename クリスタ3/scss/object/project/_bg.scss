@@ -1,0 +1,38 @@
+/**
+ * #Bg
+ */
+
+
+.p-bg--common {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/common_main_bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.p-bg--contact {
+    padding: 30px 0;
+    background-color: #E1EBFD;
+}
+
+.p-bg--privacy {
+    background-color: #F2F2F2;
+}
+
+.p-bg--gray {
+    background-color: #f0f0f0;
+}
+
+.p-bg--after {
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 100vw;
+        height: 160px;
+        display: block;
+        background-color: #f2f2f2;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+}

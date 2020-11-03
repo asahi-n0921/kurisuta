@@ -1,0 +1,31 @@
+.c-form__item {
+    margin: 45px auto;
+}
+
+.c-form__item label {
+    margin-bottom: 20px;
+}
+
+.c-form__area {
+    width: 100%;
+
+    @include sp {
+        height: 50px;
+    }
+}
+
+.c-form__required {
+    margin-left: 10px;
+    padding: 3px 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 10px;
+}
+
+.c-form__radio {
+    margin-left: 50px;
+
+    @include sp {
+        margin: 0;
+    }
+}

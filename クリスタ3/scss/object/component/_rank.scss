@@ -1,0 +1,62 @@
+/**
+ * #Rank
+ */
+$my-rank-space-y: my-paddings(small) !default;
+$my-rank-space-x: my-paddings() !default;
+$my-rank-space-y-small: ($my-rank-space-y / 2) !default;
+$my-rank-space-x-small: ($my-rank-space-x / 2) !default;
+$my-rank-space-y-large: ($my-rank-space-y * 2) !default;
+$my-rank-space-x-large: ($my-rank-space-x * 2) !default;
+
+/**
+ * 横並び（ranked）になるリストオブジェクトです。
+ * リンクがない場合でも余白が変わりません。
+ * モディファイアで余白が変更できます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/k93rhad6/3)
+ *
+ * <ul class="c-rank [c-rank--small]">
+ *   <li class="c-rank__item">
+ *     <a href="#" class="c-rank__link"></a>
+ *   </li>
+ *   <li class="c-rank__item">
+ *     <a href="#" class="c-rank__link"></a>
+ *   </li>
+ * </ul>
+ */
+.c-rank {
+    @include my-clearfix;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-rank__item {
+    float: left;
+    padding: $my-rank-space-y $my-rank-space-x;
+}
+
+.c-rank__link {
+    display: inline-block;
+    margin: (-$my-rank-space-y) (-$my-rank-space-x);
+    padding: $my-rank-space-y $my-rank-space-x;
+}
+
+.c-rank--small {
+    > .c-rank__item {
+        padding: 0 $my-rank-space-x-small;
+    }
+    .c-rank__link {
+        margin: 0 (-$my-rank-space-x-small);
+        padding: 0 ($my-rank-space-x-small);
+    }
+}
+
+.c-rank--large {
+    > .c-rank__item {
+        padding: $my-rank-space-y-large $my-rank-space-x-large;
+    }
+    .c-rank__link {
+        margin: (-$my-rank-space-y-large) (-$my-rank-space-x-large);
+        padding: $my-rank-space-y-large $my-rank-space-x-large;
+    }
+}

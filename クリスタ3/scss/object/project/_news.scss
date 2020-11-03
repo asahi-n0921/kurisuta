@@ -1,0 +1,32 @@
+.p-news__wrapper {
+    max-width: 700px;
+    margin-left: auto;
+}
+
+.p-news__item {
+    margin: 30px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.p-news__block {
+    margin: 0;
+}
+
+.p-news__date {
+    font-size: 10px;
+    font-family: 'Montserrat';
+    color: #cecece;
+}
+
+.p-news__title {
+    margin-top: 13px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'YuGothic';
+    color: #333;
+
+    @include sp {
+        font-size: 12px;
+    }
+}

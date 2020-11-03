@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import "../mixin/mixins";
+
+.Kv {
+    height: 700px;
+    background-image: url(../../img/fv-bgi@2x.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @include sp {
+        height: 590px;
+    }
+}
+
+.Kv__inner {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 250px;
+    text-align: center;
+}
+
+.Kv__title {
+    padding: 15px 10px;
+    border: 2px solid #fff;
+    font-size: 50px;
+    color: #fff;
+
+    @include sp {
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 30px;
+    }
+}

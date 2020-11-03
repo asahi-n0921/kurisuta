@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.text__right {
+    text-align: right;
+}
+
+.text__center {
+    text-align: center;
+}
+
+.font--even {
+    color: #fff;
+}
+
+.bg--even::after {
+    background-color: #fff;
+}

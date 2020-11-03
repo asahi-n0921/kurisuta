@@ -1,0 +1,197 @@
+/**
+ * FUNCTION
+ * Function.............
+ *
+ * VARIABLE
+ * Global...............プロジェクト全体を通して使用される変数です。
+ * Color................カラー用の変数（マップ）を管理します。
+ * Config...............
+ *
+ * MIXIN
+ * Media-query..........メディアクエリ用のmixinです。
+ * Clearfix.............`float`を解除する`clearfix`のmixinです。
+ *
+ * VENDORS
+ * Normalize.css........Normalize cssのインポートします。
+ *
+ * VENDORS-EXTENSION
+ * Normalize.css........Normalize.cssのスタイルを上書きします。
+ *
+ * BASE
+ * Base.................要素セレクタと属性セレクタのデフォルトスタイルです。
+ *
+ * LAYOUT
+ * Header...............ヘッダーエリアのコンテナブロックのスタイルを指定します。
+ * Footer...............フッターエリアのコンテナブロックのスタイルを指定します。
+ * Main.................メインコンテンツエリアのコンテナブロックのスタイルを指定します。
+ * Sidebar..............サイドバーエリアのコンテナブロックのスタイルを指定します。
+ *
+ * COMPONENT
+ * Wrapper..............コンポーネントをラップするオブジェクトです。`max-width`が指定されています。
+ * Grid.................グリッドレイアウトのベーススタイルです。
+ * Inline...............横並びになるリストオブジェクトです。
+ * Block................縦並びになるリストオブジェクトです。
+ * Rank.................横並びになるリストオブジェクトです。アンカータグのクリック範囲が大きく指定されています。
+ * Pac..................子要素を折り返さず、横幅内に収めるリストオブジェクトです。
+ * Stac.................縦に積み上げていくタイプのリストオブジェクトです。
+ * Media................画像とテキストを横並びにするために使用するオブジェクトです。
+ * Split................2つの要素をブロックから横並びにするオブジェクトです。
+ * Justify..............子要素を両端揃えにするオブジェクトです。
+ * Scroll...............横スクロールに対応したテーブルオブジェクトです。
+ * Central..............上下左右の中央配置オブジェクトです。
+ * Button...............ボタンコンポーネントのベーススタイルです。
+ * Card.................カード型のコンポーネントです。
+ * Embed................YouTubeなどの埋め込みコンテンツのアスペクト比を固定するオブジェクトです。
+ * Images...............画像コンポーネントです。
+ *
+ * PROJECT
+ * Breadcrumbs..........パンくずリストです。セパレーターは`>`です。
+ * Pagination...........前後のページに遷移するためのナビゲーションです。アイコンは`<`, `>`です。
+ * Tag-cloud............タグクラウドのコンポーネントです。
+ * Alert................エラーメッセージなどを表示するコンポーネントです。
+ * Badge................投稿数のような数値を表示するコンポーネントです。
+ * Label................インラインでメッセージを表示するコンポーネントです。
+ * Balloon..............吹き出しのコンポーネントです。
+ *
+ * UTILITY
+ * Col..................レスポンシブに対応した`width`を指定するためのヘルパークラスです。
+ * Push.................レスポンシブに対応した`left`を指定するためのヘルパークラスです。
+ * Pull.................レスポンシブに対応した`right`を指定するためのヘルパークラスです。
+ * Column...............レスポンシブに対応した`column-count`を指定するためのヘルパークラスです。
+ * Margin...............レスポンシブに対応した`margin`を指定するためのヘルパークラスです。
+ * Padding..............`padding`を指定するためのヘルパークラスです。
+ * Display..............要素の表示を切り替えるヘルパークラスです。
+ * Float................`float`とクリアーフィックスのヘルパークラスです。
+ * Position.............`position`のヘルパークラスです。
+ * Text.................テキストのスタイルを変更するヘルパークラスです。
+ */
+
+
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+
+// -----------------------------------------------------------------
+// Variable
+// -----------------------------------------------------------------
+
+@import "foundation/variable/_global";
+@import "foundation/variable/_color";
+@import "foundation/variable/_config";
+
+// -----------------------------------------------------------------
+// Function
+// -----------------------------------------------------------------
+
+@import "foundation/function/_function";
+
+// -----------------------------------------------------------------
+// Mixin
+// -----------------------------------------------------------------
+
+@import "foundation/mixin/_media-query";
+@import "foundation/mixin/_clearfix";
+
+/* Vendors
+   ----------------------------------------------------------------- */
+
+@import "foundation/vendors/_normalize";
+
+/* Vendors-extension
+   ----------------------------------------------------------------- */
+
+@import "foundation/vendors-extension/_normalize";
+
+/* Base
+   ----------------------------------------------------------------- */
+
+@import "foundation/base/_base";
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+@import "layout/_footer";
+@import "layout/_header";
+@import "layout/_main";
+@import "layout/_sidebar";
+@import "layout/_section";
+
+
+/* ==========================================================================
+   Object
+   ========================================================================== */
+
+/* Component
+   ----------------------------------------------------------------- */
+
+@import "object/component/_wrapper";
+@import "object/component/_grid";
+@import "object/component/_inline";
+@import "object/component/_block";
+@import "object/component/_rank";
+@import "object/component/_pack";
+@import "object/component/_stack";
+@import "object/component/_media";
+@import "object/component/_split";
+@import "object/component/_justify";
+@import "object/component/_scroll";
+@import "object/component/_central";
+@import "object/component/_button";
+@import "object/component/_card";
+@import "object/component/_embed";
+@import "object/component/_image";
+@import "object/component/_flex";
+@import "object/component/_kv";
+@import "object/component/inner";
+@import "object/component/_top_scroll";
+@import "object/component/_hamburger";
+@import "object/component/_table";
+@import "object/component/_definition";
+@import "object/component/_effect";
+@import "object/component/_form";
+
+/* Project
+   ----------------------------------------------------------------- */
+
+@import "object/project/_breadcrumbs";
+@import "object/project/_pagination";
+@import "object/project/_tag-cloud";
+@import "object/project/_alert";
+@import "object/project/_badge";
+@import "object/project/_label";
+@import "object/project/_balloon";
+@import "object/project/_nav";
+@import "object/project/_point";
+@import "object/project/_recruit";
+@import "object/project/_contact";
+@import "object/project/_map";
+@import "object/project/_service";
+@import "object/project/_clean";
+@import "object/project/_item";
+@import "object/project/_greeting";
+@import "object/project/_bg";
+@import "object/project/_privacy";
+@import "object/project/_about";
+@import "object/project/_news";
+@import "object/project/_vision";
+@import "object/project/_company";
+@import "object/project/_related";
+
+
+/* Utitlity
+   ----------------------------------------------------------------- */
+
+// @import "object/utility/_col";
+// @import "object/utility/_push";
+// @import "object/utility/_pull";
+// @import "object/utility/_column";
+@import "object/utility/_margin";
+@import "object/utility/_padding";
+@import "object/utility/_display";
+// @import "object/utility/_float";
+@import "object/utility/_position";
+@import "object/utility/_text";
+@import "object/utility/_title";
+@import "object/utility/_space";

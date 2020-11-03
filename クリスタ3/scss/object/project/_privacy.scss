@@ -1,0 +1,36 @@
+/**
+ * #Privacy
+ */
+
+.p-privacy {
+}
+
+.p-privacy__title {
+    width: 30%;
+
+    @include sp {
+        width: 100%;
+    }
+}
+
+.p-privacy__text { 
+    margin: 30px auto;
+    font-size: 16px;
+
+    @include sp {
+        margin: 0;
+        font-size: 12px;
+    }
+}
+
+.p-privacy__area {
+    height: 250px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #333;
+    overflow: auto;
+}
+
+.p-privacy--bottom {
+    margin-bottom: 35px;
+}

@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.Contact {
+    background-image: url(../../img/contact-bgi@2x.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.Contact__text {
+    margin: 40px auto;
+    color: #fff;
+
+    @include sp {
+        font-size: 20px;
+    }
+}

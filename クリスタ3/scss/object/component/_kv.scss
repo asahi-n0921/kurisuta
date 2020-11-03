@@ -1,0 +1,78 @@
+/**
+ * #Kv
+ */
+
+.p-kv {
+    height: 100vh;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #222;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+
+.p-kv-wrapper {
+    max-width: 1100px;
+    height: 640px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @include sp {
+        width: 76.4%;
+        height: 86.5%;
+    }
+}
+
+.p-kv-wrapper--top {
+    background-image: url(../../../img/kv-img.jpg);
+
+    @include sp {
+        background-image: url(../../../img/kv-img-sp.jpg);
+    }
+}
+
+.p-kv-wrapper--about {
+    background-image: url(../../../img/heading-img.jpg);
+}
+
+.p-kv-copy__content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    color: #fff
+}
+
+.p-kv-copy__content {
+    @include sp {
+        right: 25%;
+    }
+}
+
+.p-kv-copy__catch {
+    font-size: 20px;
+
+    @include sp {
+        font-size: 16px;
+    }
+}
+
+.p-kv-copy__title {
+    font-family: 'Montserrat';
+    font-size: 72px;
+    font-weight: bold;
+
+    @include sp {
+        font-size: 56px;
+        line-height: 1.2;
+    }
+}

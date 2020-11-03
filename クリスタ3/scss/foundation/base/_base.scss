@@ -1,0 +1,279 @@
+/**
+ * #Base
+ */
+
+/**
+ * ボックスモデルを`border-box`にリセットします。
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 14px;
+    line-height: my-strip-unit(my-margins());
+    /* iOSとAndroidでのリンクをタップ時のハイライトをリセットする。 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    @include my-media-query(lg) {
+        font-size: 16px;
+    }
+}
+
+body {
+    color: my-colors(text);
+    font-family: 'Noto Sans JP', '游ゴシック Medium', '游ゴシック', 'Yu Gothic Medium', 'Yu Gothic', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-weight: 400;
+    background-color: my-colors(bg);
+    /* アンチエイリアスを指定する */
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    /* メトリクスカーニングを指定する */
+    font-kerning: normal;
+    position: relative;
+}
+
+/* 日本語にitalicは使用されないためリセットする */
+i,
+cite,
+em,
+address,
+dfn {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h1, .u-h1 {
+    font-size: 2rem;
+}
+
+h2, .u-h2 {
+    font-size: 1.6rem;
+}
+
+h3, .u-h3 {
+    font-size: 1.4rem;
+}
+
+h4, .u-h4 {
+    font-size: 1.2rem;
+}
+
+h5, .u-h5 {
+    font-size: 1rem;
+}
+
+h6, .u-h6 {
+    font-size: 1rem;
+}
+
+a {
+    color: my-colors(link);
+    text-decoration: none;
+    &:visited {
+        color: my-colors(link, visited);
+    }
+    // &:hover,
+    // &:focus {
+    //     color: my-colors(link, hover);
+    //     text-decoration: underline;
+    // }
+}
+
+a.anchor {
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+
+img,svg {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* マージンを持たないブロックとする。 */
+figure {
+    margin: 0;
+}
+
+/* `padding-strat: 40px;`の相対値 */
+ul, ol {
+    padding-left: 2.5em;
+}
+
+/* ネストされたリストのマージンをリセットする */
+li {
+
+    list-style: none;
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+}
+
+dd {
+    margin-left: 0;
+}
+
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+/**
+ * <blockquote cite="#">
+ *     <p><small></small></p>
+ *     <footer>
+ *         <cite><a href="#"></a></cite>
+ *     </footer>
+ * </blockquote>
+ */
+blockquote {
+    margin: my-margins() 0 my-margins() 0;
+    padding-left: my-paddings();
+    border-left: 1px solid my-colors(text, light);
+    color: my-colors(text, light);
+    & > :first-child {
+        margin-top: 0;
+    }
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* `<cite>`の先頭にemダッシュが付く */
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: my-paddings();
+    background-color: my-colors(bg);
+}
+
+legend {
+    padding: 0 my-paddings(small);
+    background-color: my-colors(bg);
+}
+
+label {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
+    padding-left: my-paddings(small);
+}
+
+textarea {
+    width: 100%;
+    min-height: 8rem;
+    padding: my-paddings(large) my-paddings(small);
+    vertical-align: top;
+    resize: vertical;
+}
+
+optgroup {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+ * プレイスホルダーのcolorを無効化してopacityでコントラストを抑える
+ * http://hail2u.net/blog/webdesign/placeholder-normalization.html
+ */
+:-ms-input-placeholder {
+    opacity: .54;
+    color: inherit;
+}
+
+::-webkit-input-placeholder {
+    opacity: .54;
+    color: inherit;
+}
+
+:placeholder-shown {
+  opacity: .54;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-size: 1rem;
+}
+
+code,
+pre {
+    font-family: Menlo, Consolas, Courier, monospace;
+}
+
+kbd {
+    /* ユーザーに入力を促す要素 */
+    font-family: inherit;
+    > kbd {
+        /* キーボードのキーを示す要素に変化するためボーダーで囲われます */
+        display: inline-block;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 3px 6px;
+        font-size: 0.75rem;
+        line-height: 1;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: $my-base-round;
+    }
+}
+
+/**
+ * Vertical Rhythmを指定しているクラスセレクタをまとめて指定します。
+ */
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol, dl,
+table,
+pre,
+address {
+    margin-top: 0;
+    margin-bottom: my-margins();
+}
+
+html,body,div,span,iframe,h1,h2,h3,h4,h5,p,a,img,ul,li,table,tr,th,td,tbody,footer,header,main,nav,section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: normal;
+	list-style: none;
+	text-decoration: none;
+}

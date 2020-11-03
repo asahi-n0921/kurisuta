@@ -1,0 +1,47 @@
+/**
+ * #Definition
+ */
+
+.c-definition__list {
+    margin-bottom: 0;
+    padding: 10px 0;
+    border-top: 1px solid #E2E2E2;
+    display: flex;
+    display: -webkit-box; /*Android4.3*/
+    display: -moz-box;    /*Firefox21*/
+    display: -ms-flexbox; /*IE10*/
+    display: -webkit-flex; /*PC-Safari,iOS8.4*/
+
+    &:nth-last-child(1) {
+        border-bottom: 1px solid #E2E2E2;
+    }
+}
+
+.c-definition__term {
+    width: 40%;
+    text-align: right;
+    color: #00A9EB;
+
+    @include sp {
+        width: 30%;
+        text-align: left;
+    }
+	
+	@include se {
+		font-size: 12px;
+	}
+}
+
+.c-definition__description {
+    width: 55%;
+    margin-left: auto;
+
+    @include sp {
+        margin-left: 25px;
+    }
+	
+	@include se {
+		margin-left: 5px;
+		font-size: 12px;
+	}
+}

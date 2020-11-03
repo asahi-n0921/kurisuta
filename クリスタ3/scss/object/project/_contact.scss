@@ -1,0 +1,18 @@
+/**
+ * #Contact
+ */
+
+.p-contact__content {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.p-contact__text {
+    width: 40%;
+}
+
+.p-contact__img {
+    width: 50%;
+}

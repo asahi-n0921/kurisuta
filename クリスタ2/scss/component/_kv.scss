@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+
+.Kv {
+    height: 90vh;
+    // background-image: url(../../img/fv-bgi_01@2x.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @include sp {
+        height: 590px;
+    }
+}
+
+.Kv__inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 350px;
+    text-align: left;
+
+    @include sp {
+        padding-top: 130px;
+    }
+}
+
+.Kv__title {
+    font-size: 70px;
+    color: #fff;
+
+    @include sp {
+        width: 100%;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.Kv__text {
+    font-size: 40px;
+    color: #fff;
+
+    @include sp {
+        max-width: 250px;
+        width: 100%;
+        margin: 60px auto 0;
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+.KvContact {
+    height: 70vh;
+    background-image: url(../../img/contact-bgi@2x.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @include sp {
+        height: 360px;
+    }
+}
+
+.KvContact__inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 185px;
+    text-align: left;
+
+    @include sp {
+        padding-top: 130px;
+    }
+}
+
+.KvContact__title {
+    font-size: 60px;
+    font-style: italic;
+    font-family: Noto serif;
+    color: #fff;
+    text-align: center;
+}

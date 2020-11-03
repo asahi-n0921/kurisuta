@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.Section {
+    padding: 100px 0;
+
+    @include sp {
+        padding: 50px 0;
+    }
+}
+
+.Section__inner {
+    max-width: 1030px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include sp {
+        padding: 0 15px;
+    }
+}
+
+.Section__title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.Section__titleSub {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 2;
+
+    @include sp {
+        font-size: 20px;
+    }
+}
+
+.Section__text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2;
+
+    @include sp {
+        margin: 30px auto;
+
+    }
+}

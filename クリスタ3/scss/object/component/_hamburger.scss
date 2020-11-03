@@ -1,0 +1,87 @@
+/**
+ * #Hamburger
+ */
+
+.c-hamburger__block {
+    display: flex;
+}
+
+.c-hamburger__block.black .c-hamburger__line {
+    background-color: #333;
+    transition: background-color .3s;
+}
+
+.c-hamburger {
+    width: 22px;
+    position: relative;
+    cursor: pointer;
+    // display: none;
+    z-index: 100;
+
+    @include tab {
+        display: block;
+    }
+}
+
+.c-hamburger__line {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+}
+
+
+.c-hamburger__line--top {
+    top: calc(50% - 6px);
+
+}
+
+.c-hamburger__line--middle {
+    top: 50%;
+}
+
+.c-hamburger__line--bottom {
+    top: calc(50% + 6px);
+}
+
+.c-hamburger__line--top.is-active {
+    transform: rotate(45deg);
+    top: calc(50% - 0px);
+
+}
+
+.c-hamburger__line--middle.is-active {
+    width: 0;
+}
+
+.c-hamburger__line--bottom.is-active {
+    transform: rotate(-45deg);
+    top: calc(50% + 0px);
+}
+
+.c-hamburger__text {
+    margin-left: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    z-index: 2;
+}
+
+.c-hamburger__text.black {
+    color: #333;
+    transition: color .3s;
+}
+
+.c-hamburger__mask {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,.5);
+    z-index: 1;
+}

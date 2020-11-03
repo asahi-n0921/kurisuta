@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+$tab: 960px;
+$sp: 560px;
+
+@mixin tab {
+    @media(max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media(max-width: ($sp)) {
+        @content;
+    }
+}

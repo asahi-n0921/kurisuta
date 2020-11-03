@@ -1,0 +1,70 @@
+/**
+ * #Stack
+ */
+$my-stack-space-y: my-paddings() !default;
+$my-stack-space-x: 0 !default;
+$my-stack-space-y-small: ($my-stack-space-y / 2) !default;
+$my-stack-space-x-small: $my-stack-space-x !default;
+$my-stack-space-y-large: ($my-stack-space-y * 2) !default;
+$my-stack-space-x-large: $my-stack-space-x !default;
+
+/**
+ * 縦に積み重なる（stack up）シンプルなナビゲーションオブジェクトです。
+ * リンクがない場合でも余白が変わりません。
+ * モディファイアで余白が変更できます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/3rcgp8t6/2)
+ *
+ * <ul class="c-stack [c-stack--small]">
+ *     <li class="c-stack__item">
+ *         <a href="#" class="c-stack__link">
+ *            [content]
+ *         </a>
+ *     </li>
+ *     <li class="c-stack__item">
+ *          [content]
+ *     </li>
+ * </ul>
+ */
+.c-stack {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-stack__item {
+    padding: $my-stack-space-y $my-stack-space-x;
+}
+
+.c-stack__link {
+    display: block;
+    margin: (-$my-stack-space-y) (-$my-stack-space-x);
+    padding: $my-stack-space-y $my-stack-space-x;
+}
+
+.c-stack--center {
+    text-align: center;
+}
+
+.c-stack--right {
+    text-align: right;
+}
+
+.c-stack--small {
+    > .c-stack__item {
+        padding: $my-stack-space-y-small $my-stack-space-x-small;
+    }
+    .c-stack__link {
+        margin: (-$my-stack-space-y-small)  (-$my-stack-space-x-small);
+        padding: $my-stack-space-y-small $my-stack-space-x-small;
+    }
+}
+
+.c-stack--large {
+    > .c-stack__item {
+        padding: $my-stack-space-y-large $my-stack-space-x-large;
+    }
+    .c-stack__link {
+        margin: (-$my-stack-space-y-large)  (-$my-stack-space-x-large);
+        padding: $my-stack-space-y-large $my-stack-space-x-large;
+    }
+}

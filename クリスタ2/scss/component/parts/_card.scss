@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.Card__list {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin: 80px auto;
+
+    @include sp {
+        padding: 0 30px;
+    }
+}
+
+.Card__item {
+    width: 30%;
+    margin: 0 auto;
+    background-color: #fff;
+
+    @include sp {
+        width: 100%;
+        margin: 15px auto;
+    }
+}
+
+.Card__text {
+    padding: 25px 20px;
+}

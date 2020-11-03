@@ -1,0 +1,123 @@
+/**
+ * #Image
+ */
+/**
+ * [DEMO](https://jsfiddle.net/manabuyasuda/wy8b3o6b/2)
+ */
+$my-image-margin: my-paddings() !default;
+
+.c-image-round {
+    border-radius: $my-base-round;
+}
+
+.c-image-circle {
+    border-radius: 50%;
+}
+
+.c-image-center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.c-image-right {
+    float: right;
+    margin-left: $my-image-margin;
+}
+
+.c-image-left {
+    float: left;
+    margin-right: $my-image-margin;
+}
+
+/**
+ * 背景画像が縦横比を固定したまま表示領域いっぱいに表示されます。
+ * モディファイアかprojectレイヤーで
+ * `background-image`や`background-position`などを追加してください。
+ *
+ * <div class="c-image-cover [c-image-cover--fixed] p-image-example">
+ *   <div class="c-central-box">
+ *     <h1></h1>
+ *   </div>
+ * </div>
+ *
+ * .p-image-example {
+ *     position: relative; // 子要素の中央配置の起点となる
+ *     height: 300px; // 高さを固定
+ *     background-position: left top; // 基準位置を指定
+ *     background-image: url("http://placeimg.com/640/300/tech"); // 表示する画像を指定
+ * }
+ */
+.c-image-cover {
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.c-image-cover--fixed {
+    @include my-media-query(lg) {
+        background-attachment: fixed;
+    }
+}
+
+/**
+ * 背景画像をフルードイメージのように可変させます。
+ * 画像のURLとアスペクト比を指定するクラスを追加します。
+ *
+ * <div class="c-image-contain p-image-example"></div>
+ *
+ * .p-image-example {
+ *     // 表示画像の高さ ÷ 表示画像の幅 × 100%
+ *     padding-top: (1000 / 400) * 100%;
+ *     background-image: url("http://lorempixel.com/1000/400/");
+ * }
+ */
+.c-image-contain {
+    height: 0;
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+}
+
+/**
+ * 背景画像の上に透過された黒いレイヤーを覆います。
+ * モディファイアで背景色を指定します。
+ * elementを指定しないと、うまく表示、選択できなくなるので注意してください。
+ *
+ * <div class="c-image-overlay c-image-overlay--black">
+ *   <div class="c-image-overlay__unit c-central-box">
+ *     content
+ *   </div>
+ * </div>
+ */
+.c-image-overlay {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.c-image-overlay__unit {
+    position: absolute;
+    z-index: my-z-indexs(default);
+}
+
+.c-image-overlay--black {
+    &:after {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.c-image-overlay--teal {
+    &:after {
+        background: linear-gradient(rgba(teal, 0.9), rgba(teal, 0.6));
+    }
+}

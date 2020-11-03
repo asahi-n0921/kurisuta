@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+.Service {
+    width: 100%;
+    margin: 0 auto;
+    padding: 70px 0 100px;
+    overflow: hidden;
+
+    @include sp {
+        padding: 100px 0 40px;
+    }
+}
+
+.Service__list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 80px;
+}
+
+.Service__item {
+    width: calc(100% / 3);
+    margin: 0 auto;
+    padding: 130px 0;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+
+    &:hover::before {
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+    }
+
+
+    // &:hover {
+    //     // opacity: 0.6;
+    //     // transition-duration: 0.3s;
+    //     filter: brightness(50%);
+    // }
+
+    &:nth-child(1) {
+        background-image: url(../../img/service-img01@2x.jpg);
+    }
+    &:nth-child(2) {
+        background-image: url(../../img/service-img02@2x.jpg);
+    }
+    &:nth-child(3) {
+        background-image: url(../../img/sevice-img03@2x.jpg);
+    }
+
+    @include sp {
+        width: 100%;
+        margin: 15px auto;
+    }
+}
+
+.Service__box {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+
+.Service__link {
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Noto Serif;
+    color: #fff;
+    display: block;
+}

@@ -1,0 +1,28 @@
+/**
+ * #Point
+ */
+
+.p-point {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/point_bg.png);
+    background-size: cover;
+    background-position: center;
+
+    @include sp {
+        background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/point_bg-sp.png);
+    }
+}
+
+.p-point__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.p-point__text {
+    margin-top: 30px;
+    font-size: .9rem;
+    text-align: left;
+
+    @include tab {
+        font-size: 1rem;
+    }
+}

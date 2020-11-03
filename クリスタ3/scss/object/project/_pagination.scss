@@ -1,0 +1,43 @@
+/**
+ * #Pagenation
+ */
+
+/**
+ * ページネーションのコンポーネントです。
+ * `c-rank`オブジェクトと組み合わせてマークアップします。
+ *
+ * <ol class="c-rank p-pagination">
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link p-pagination__link--prev">Prev</a>
+ *   </li>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link">1</a>
+ *   </li>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link">2</a>
+ *   </li>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link">3</a>
+ *   </li>
+ *   <li class="c-rank__item p-pagination__item">
+ *     <a href="#" class="c-rank__link p-pagination__link p-pagination__link--next">Next</a>
+ *   </li>
+ * </ol>
+ */
+.p-pagination {
+    line-height: 1;
+    text-align: center;
+}
+
+.p-pagination__link {
+    display: inline-block;
+    padding: my-paddings();
+}
+
+.p-pagination__link--prev:before {
+    content: "\003C" "\00A0";
+}
+
+.p-pagination__link--next:after {
+    content: "\00A0" "\003E";
+}

@@ -1,0 +1,132 @@
+/**
+ * #Media
+ */
+$my-media-gutter: my-paddings() !default;
+$my-media-gutter-small: ($my-media-gutter / 2) !default;
+$my-media-gutter-large: ($my-media-gutter * 2) !default;
+
+/**
+ * 画像とテキストを横並びにするオブジェクトです。
+ * Modifierで余白の変更、垂直方向の変更、要素の配置順の反転、
+ * 任意の横幅以下で縦に積み重なるレスポンシブ対応にすることができます。
+ *
+ * <div class="c-media [c-media--small c-media--middle c-media--rev c-media--stack-md-down]">
+ *   <figure class="c-media__item">
+ *     <img>
+ *   </figure>
+ *   <div class="c-media__item">
+ *     <p></p>
+ *   </div>
+ * </div>
+ */
+.c-media {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.c-media__item {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    &:not(:first-child) {
+        padding-left: $my-media-gutter;
+    }
+    & > :first-child {
+        margin-top: 0;
+    }
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-media__item > img {
+    display: block;
+}
+
+.c-media--middle {
+    > .c-media__item {
+        vertical-align: middle;
+    }
+}
+
+.c-media--bottom {
+    > .c-media__item {
+        vertical-align: bottom;
+    }
+}
+
+.c-media--rev {
+    text-align: left;
+    direction: rtl;
+    > .c-media__item {
+        text-align: left;
+        direction: ltr;
+    }
+    > .c-media__item:not(:first-child) {
+        padding-right: $my-media-gutter;
+        padding-left: 0;
+    }
+}
+
+.c-media--small {
+    > .c-media__item:not(:first-child) {
+        padding-left: $my-media-gutter-small;
+    }
+    &.c-media--rev > .c-media__item:not(:first-child) {
+        padding-right: $my-media-gutter-small;
+        padding-left: 0;
+    }
+}
+
+.c-media--large {
+    > .c-media__item:not(:first-child) {
+        padding-left: $my-media-gutter-large;
+    }
+    &.c-media--rev > .c-media__item:not(:first-child) {
+        padding-right: $my-media-gutter-large;
+        padding-left: 0;
+    }
+}
+
+@include my-media-query(sm-down) {
+    .c-media--stack-sm-down {
+        > .c-media__item {
+            display: block;
+        }
+        > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter 0 0;
+        }
+        > .c-media__item > img {
+            margin: auto;
+        }
+        &.c-media--small > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-small 0 0;
+        }
+        &.c-media--large > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-large 0 0;
+        }
+    }
+}
+
+@include my-media-query(md-down) {
+    .c-media--stack-md-down {
+        > .c-media__item {
+            display: block;
+        }
+        > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter 0 0;
+        }
+        > .c-media__item > img {
+            margin: auto;
+        }
+        &.c-media--small > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-small 0 0;
+        }
+        &.c-media--large > .c-media__item:not(:first-child) {
+            padding: $my-media-gutter-large 0 0;
+        }
+    }
+}

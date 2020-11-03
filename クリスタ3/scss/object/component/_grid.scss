@@ -1,0 +1,126 @@
+/**
+ * #Grid
+ */
+$my-grid-gutter: my-paddings(large) !default;
+$my-grid-gutter-small: ($my-grid-gutter / 2) !default;
+$my-grid-gutter-large: ($my-grid-gutter * 2) !default;
+
+/**
+ * グリッドレイアウトオブジェクトです。
+ * `width`はデフォルトで100%が指定されています。
+ * ガターは左側にだけ指定されています。
+ * `width`の変更は`Utility/_col.scss`のクラスを使用します。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/a0r2xcsr/4)
+ *
+ * <div class="c-wrapper">
+ *   <div class="c-grid c-grid--medium">
+ *     <div class="c-grid__item u-col-8of12-md"></div>
+ *     <div class="c-grid__item u-col-4of12-md"></div>
+ *   </div>
+ * </div>
+ */
+.c-grid {
+    display: block;
+    margin: 0;
+    padding: 0;
+    /* カラム間の余白を除去する */
+    font-size: 0;
+    list-style-type: none;
+}
+
+.c-grid__item {
+    display: inline-block;
+    width: 100%;
+    /* フォントサイズを戻す */
+    font-size: 1rem;
+    vertical-align: top;
+}
+
+/**
+ * gutterを追加します。サイズは`font-size`のサイズキーワードをベースにします。
+ * xx-small | x-small | small | medium | large | x-large | xx-large
+ */
+.c-grid--small {
+    margin-left: -$my-grid-gutter-small;
+    > .c-grid__item {
+        padding-left: $my-grid-gutter-small;
+    }
+}
+
+.c-grid--medium {
+    margin-left: -$my-grid-gutter;
+    > .c-grid__item {
+        padding-left: $my-grid-gutter;
+    }
+}
+
+.c-grid--large {
+    margin-left: -$my-grid-gutter-large;
+    > .c-grid__item {
+        padding-left: $my-grid-gutter-large;
+    }
+}
+
+/**
+ * デフォルトで`top`に指定されている垂直位置を変更します。
+ *
+ * <div class="c-grid c-grid--gutter c-grid--middle">
+ *   <div class="c-grid__item u-col-8of12-md"></div>
+ *   <div class="c-grid__item u-col-4of12-md"></div>
+ * </div>
+ */
+.c-grid--middle {
+    > .c-grid__item {
+        vertical-align: middle;
+    }
+}
+
+.c-grid--bottom {
+    > .c-grid__item {
+        vertical-align: bottom;
+    }
+}
+
+/**
+ * カラムをセンタリングします。
+ * 1カラムレイアウトに使用します。
+ *
+ * <div class="c-grid c-grid--center">
+ *   <div class="c-grid__item u-col-8of12-md"></div>
+ * </div>
+ */
+.c-grid--center {
+    text-align: center;
+    > .c-grid__item {
+        text-align: left;
+    }
+}
+
+.c-grid--right {
+    text-align: right;
+    > .c-grid__item {
+        text-align: left;
+    }
+}
+
+/**
+ * 左を起点とするレイアウトを反転させます。
+ * 左サイドバーの2カラムレイアウトに使用します。
+ * http://www.htmq.com/style/direction.shtml
+ *
+ * <div class="c-grid c-grid--medium c-grid--rev">
+ *   <div class="c-grid__item u-col-8of12-md"></div>
+ *   <div class="c-grid__item u-col-4of12-md"></div>
+ * </div>
+ */
+.c-grid--rev {
+    text-align: left;
+    /* 文字表記を右から左に変更します。 */
+    direction: rtl;
+    > .c-grid__item {
+        /* IE以外ではテキストが右寄せのままになってしまう */
+        text-align: left;
+        /* derectionプロパティを元に戻します。*/
+        direction: ltr;
+    }
+}

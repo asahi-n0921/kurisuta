@@ -1,0 +1,66 @@
+/**
+ * #Pack
+ */
+$my-pack-space-y: my-paddings() !default;
+$my-pack-space-x: my-paddings(small) !default;
+$my-pack-space-y-small: ($my-pack-space-y / 2) !default;
+$my-pack-space-x-small: $my-pack-space-x !default;
+$my-pack-space-y-large: ($my-pack-space-y * 2) !default;
+$my-pack-space-x-large: $my-pack-space-x !default;
+
+/**
+ * 横幅いっぱいで均等、中央揃えのナビゲーションオブジェクトです。
+ * リンクがない場合でも余白が変わりません。
+ * モディファイアで余白を変更できます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/bnrepy5e/2)
+ *
+ * <ul class="c-pack [c-pack--small]">
+ *   <li class="c-pack__item">
+ *     <a href="#" class="c-pack__link"></a>
+ *   </li>
+ *   <li class="c-pack__item">
+ *     <a href="#" class="c-pack__link"></a>
+ *   </li>
+ * </ul>
+ */
+.c-pack {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.c-pack__item {
+    display: table-cell;
+    padding: $my-pack-space-y $my-pack-space-x;
+    line-height: 1;
+}
+
+.c-pack__link {
+    display: block;
+    margin: (-$my-pack-space-y) (-$my-pack-space-x);
+    padding: $my-pack-space-y $my-pack-space-x;
+    text-decoration: none;
+}
+
+.c-pack--small {
+    > .c-pack__item {
+        padding: $my-pack-space-y-small $my-pack-space-x-small;
+    }
+    .c-pack__link {
+        margin: (-$my-pack-space-y-small) (-$my-pack-space-x-small);
+        padding: $my-pack-space-y-small $my-pack-space-x-small;
+    }
+}
+
+.c-pack--large {
+    > .c-pack__item {
+        padding: $my-pack-space-y-large $my-pack-space-x-large;
+    }
+    .c-pack__link {
+        margin: (-$my-pack-space-y-large) (-$my-pack-space-x-large);
+        padding: $my-pack-space-y-large $my-pack-space-x-large;
+    }
+}

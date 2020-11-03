@@ -1,0 +1,14 @@
+.p-company__list {
+    margin: 30px auto;
+    padding: 0 30px;
+    border-top: 1px solid #ddd;
+
+    @include sp {
+        padding: 0;
+    }
+}
+
+.p-company__item {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}

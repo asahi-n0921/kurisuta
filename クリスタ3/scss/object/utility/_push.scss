@@ -1,0 +1,48 @@
+/**
+ * #Push
+ */
+
+/**
+ * レスポンシブに対応した`left`プロパティを指定するヘルパークラスです。
+ * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
+ */
+
+// このようにコンパイルされます。
+// .u-push-11of12 { left: 91.66667% !important; }
+// .u-push-12of12 { left: 100% !important; }
+// @media screen and (min-width: 400px) {
+//     .u-push-1of12-sm { left: 8.33333% !important; }
+//     .u-push-2of12-sm { left: 16.66667% !important; }
+
+
+ [class*="u-push"] {
+    position: relative;
+}
+
+// 取得したいカラム数をリスト形式で指定します。
+// 例えば`1 2`を指定すると1/1, 1/2, 2/2の`push`を取得できます。
+$my-push-cols: 12 !default;
+
+// @param {Number} $cols - 取得したいカラム数を指定します。
+// @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
+// @requires {List} $push-cols - 取得するカラム数を定義しています。
+@mixin my-push($cols, $breakpoint: null) {
+    @each $col in $cols {
+        @for $i from 1 through $col {
+            .u-push-#{$i}of#{$col}#{$breakpoint} {
+                left: percentage($i / $col) $important;
+            }
+        }
+    }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include my-push($my-push-cols);
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $my-breakpoints {
+    @media #{$breakpoint} {
+        @include my-push($my-push-cols, -#{$name})
+    }
+}

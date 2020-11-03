@@ -1,0 +1,48 @@
+/**
+ * #Split
+ */
+$my-split-padding: my-paddings(small) !default;
+$my-split-border: 1px solid my-colors(ui) !default;
+
+/**
+ * 2つの要素をブロックから横並びにするオブジェクトです。
+ * 定義リストで使用することを想定しています。
+ * デフォルトで`c-split__name`が10文字を越えるとレイアウトが崩れます。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yzLa898k/2)
+ *
+ * <dl class="c-split [c-split--has-border]">
+ *   <dt class="c-split__name"></dt>
+ *   <dd class="c-split__value"></dd>
+ * </dl>
+ */
+
+.c-split {
+    margin: 0;
+    padding: 0;
+}
+
+.c-split__name {
+    padding-top: $my-split-padding;
+}
+
+.c-split__value {
+    margin-left: 0;
+    padding-bottom: $my-split-padding;
+}
+
+.c-split--has-border {
+    border-top: $my-split-border;
+    > .c-split__value {
+        border-bottom: $my-split-border;
+    }
+}
+
+@include my-media-query(md) {
+    .c-split__name {
+        float: left;
+        clear: left;
+    }
+    .c-split__value {
+        padding: $my-split-padding 0 $my-split-padding 10em;
+    }
+}

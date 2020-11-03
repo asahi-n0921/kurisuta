@@ -1,0 +1,50 @@
+/**
+ * #Tag-cloud
+ */
+$my-tag-cloud-space: my-paddings(small) !default;
+
+/**
+ * タグクラウドのコンポーネントです。
+ * `inline`オブジェクトと組み合わせてマークアップします。
+ *
+ * <ul class="c-inline p-tag-cloud">
+ *   <li class="c-inline__item p-tag-cloud__item">
+ *     <a href="" class="c-inline__link p-tag-cloud__link">CSS<span class="p-tag-cloud__count">(20)</span></a>
+ *   </li>
+ *   <li class="c-inline__item p-tag-cloud__item">
+ *     <a href="" class="c-inline__link p-tag-cloud__link">HTML<span class="p-tag-cloud__count">(100)</span></a>
+ *   </li>
+ * </ul>
+ */
+.p-tag-cloud {
+    font-size: 0.75rem;
+}
+
+.p-tag-cloud__item {
+    margin-bottom: $my-tag-cloud-space;
+}
+
+.p-tag-cloud__link {
+    padding: $my-tag-cloud-space ($my-tag-cloud-space * 2);
+    border: 1px solid my-colors(ui);
+    border-radius: $my-base-round;
+    color: inherit;
+    line-height: 1;
+    text-decoration: none;
+    transition-duration: $my-base-transition-duration;
+    &:hover {
+        color: #fff;
+        background-color: my-colors(link);
+    }
+}
+
+/**
+ * 投稿数用のラベルです。
+ * タグ名との間に半角スペースが入ります。
+ */
+.p-tag-cloud__count {
+    font-size: ($my-tag-cloud-space * 1.5);
+    &:before {
+        content: "\00A0";
+    }
+}

@@ -1,0 +1,23 @@
+/**
+ * #top_scroll
+ */
+
+.c-top__scroll {
+    width:60px;
+    height:60px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border-radius:50%;
+    display:inline-block;
+    font-size:30px;
+    text-decoration:none;
+    transition:.5s;
+    background-color: #4175EE;
+    text-align: center;
+}
+
+.c-top__scroll__link {
+    color:#fff;
+    display: block;
+}

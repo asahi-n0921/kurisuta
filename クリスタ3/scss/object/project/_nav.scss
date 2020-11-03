@@ -1,0 +1,51 @@
+/**
+ * #Nav
+ */
+
+.p-global-nav {
+    width: 36.1vw;
+    height: 100vh;
+    padding: 120px 0 0;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: center;
+    background-color:rgba(34,34,34,.95);
+    z-index: 2;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform .3s,opacity .3s;
+
+    @include sp {
+        width: 70%;
+    }
+
+    &.open {
+        transform: translateX(0);
+        opacity: 1;
+        transition: transform .3s,opacity .3s;
+    }
+
+}
+
+.p-global-nav__list {
+
+}
+
+.p-global-nav__item {
+    margin-bottom: 30px;
+}
+
+.p-global-nav__link {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+}
+
+.p-global-nav__link img {
+    width: 60px;
+    height: 60px;
+}

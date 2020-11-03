@@ -1,0 +1,48 @@
+/**
+ * #Pull
+ */
+
+/**
+ * レスポンシブに対応した`right`プロパティを指定するヘルパークラスです。
+ * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
+ */
+
+// このようにコンパイルされます。
+// .u-pull-11of12 { right: 91.66667% !important; }
+// .u-pull-12of12 { right: 100% !important; }
+// @media screen and (min-width: 400px) {
+//     .u-pull-1of12-sm { right: 8.33333% !important; }
+//     .u-pull-2of12-sm { right: 16.66667% !important; }
+
+
+ [class*="u-pull"] {
+    position: relative;
+}
+
+// 取得したいカラム数をリスト形式で指定します。
+// 例えば`1 2`を指定すると1/1, 1/2, 2/2の`pull`を取得できます。
+$my-pull-cols: 12 !default;
+
+// @param {Number} $cols - 取得したいカラム数を指定します。
+// @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
+// @requires {List} $pull-cols - 取得するカラム数を定義しています。
+@mixin my-pull($cols, $breakpoint: null) {
+    @each $col in $cols {
+        @for $i from 1 through $col {
+            .u-pull-#{$i}of#{$col}#{$breakpoint} {
+                right: percentage($i / $col) $important;
+            }
+        }
+    }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include my-pull($my-pull-cols);
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $my-breakpoints {
+    @media #{$breakpoint} {
+        @include my-pull($my-pull-cols, -#{$name})
+    }
+}

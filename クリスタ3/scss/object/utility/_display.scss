@@ -1,0 +1,47 @@
+/**
+ * #Display
+ */
+
+.u-hide-visually {
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px) ;
+    position: absolute;
+    width: 1px ;
+    height: 1px ;
+}
+
+// レスポンシブに対応したヘルパークラスを生成します。
+// @param {String} breakpoint(null) - ブレイクポイントを示すキーワードになります。
+@mixin my-display($breakpoint: null) {
+  .u-display-none#{$breakpoint} { display: none ; }
+  .u-display-block#{$breakpoint} { display: block ; }
+  .u-display-inline#{$breakpoint} { display: inline ; }
+  .u-display-inline-block#{$breakpoint} { display: inline-block ; }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include my-display;
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $my-breakpoints {
+    @media #{$breakpoint} {
+        @include my-display(-#{$name});
+    }
+}
+
+.pc {
+    display: block;
+
+    @include sp {
+        display: none;
+    }
+}
+
+.sp {
+    display: none;
+
+    @include sp {
+        display: block;
+    }
+}

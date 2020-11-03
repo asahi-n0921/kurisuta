@@ -1,0 +1,60 @@
+/**
+ * #Margin
+ */
+$my-margin-small: my-margins(small);
+$my-margin-medium: my-margins();
+$my-margin-large: my-margins(large);
+
+/**
+ * m - margin
+ * a - all
+ * t, r, b, l - top, right, bottom, left
+ * x, y - top and bottom, right and left
+ * 0, s, m, l - zero, small, medium, large
+ */
+
+@mixin my-margin($name, $value) {
+    .u-ma-#{$name} { margin: $value; }
+    .u-mt-#{$name} { margin-top: $value; }
+    .u-mr-#{$name} { margin-right: $value; }
+    .u-mb-#{$name} { margin-bottom: $value; }
+    .u-ml-#{$name} { margin-left: $value; }
+    .u-my-#{$name} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+    .u-mx-#{$name} {
+        margin-right: $value;
+        margin-left: $value;
+    }
+}
+
+@include my-margin(0, 0);
+@include my-margin(s, $my-margin-small);
+@include my-margin(m, $my-margin-medium);
+@include my-margin(l, $my-margin-large);
+
+
+.u-mt-contact {
+    margin-top: 100px;
+
+    @include tab {
+        margin: 15px 0;
+    }
+}
+
+.u-my-common {
+    margin: 40px 0;
+}
+
+.u-mx-0 {
+    margin: 0;
+}
+
+.u-mx-auto {
+    margin: 0 auto;
+}
+
+.u-ml-auto {
+    margin-left: auto;
+}

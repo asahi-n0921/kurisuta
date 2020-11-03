@@ -1,0 +1,36 @@
+/**
+ * #Breadcrumbs
+ */
+
+/**
+ * パンくずリストのコンポーネントです。
+ *
+ * <ul class="p-breadcrumbs">
+ *   <li class="p-breadcrumbs__item"><a href="#" class="p-breadcrumbs__link">home</a></li>
+ *   <li class="p-breadcrumbs__item"><a href="#" class="p-breadcrumb__link">category</a></li>
+ *   <li class="p-breadcrumbs__item">content title</li>
+ * </ul>
+ */
+.p-breadcrumbs {
+    padding-left: 0;
+    list-style-type: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.p-breadcrumbs__item {
+    display: inline-block;
+    &:last-child {
+        display: inline;
+    }
+}
+
+.p-breadcrumbs__link {
+    display: inline-block;
+}
+
+.p-breadcrumbs__item + .p-breadcrumbs__item:before {
+    content: "\003E";
+    margin: 0 my-paddings(small);
+}

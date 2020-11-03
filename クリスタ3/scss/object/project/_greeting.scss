@@ -1,0 +1,38 @@
+/**
+ * #Greeting
+ */
+
+
+.p-greeting {
+    margin-top: 80px;
+}
+
+.p-greeting__img {
+    width: 20%;
+	
+	@include se {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.p-greeting__p {
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+.p-greeting--small {
+    margin-right: 10px;
+    font-size: .9rem;
+}
+
+.p-greeting__text {
+    width: 75%;
+    margin-left: auto;
+	
+	@include se {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+

@@ -1,0 +1,95 @@
+/**
+ * #Service
+ */
+
+.p-service {
+
+    @include tab {
+        padding: 0 20px;
+        background: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/service_guide_bg-sp.png);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.p-service__item {
+    width: 100%;
+    margin: 75px auto;
+    position: relative;
+
+    @include tab {
+        margin: 20px auto;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+        margin-top: 120px;
+
+        @include tab {
+            margin-top: 20px;
+        }
+    }
+}
+
+.p-service__img {
+    width: 430px;
+    height: 430px;
+    float: right;
+    // position: absolute;
+    // top: -10%;
+    // right: 13%;
+
+    @include tab {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        position: static;
+    }
+}
+
+.p-service__img--reverse {
+    // left: 13%;
+    // right: 0;
+    float: left;
+} 
+
+.p-service__text {
+    width: 520px;
+    // margin-right: auto;
+    padding: 35px 40px;
+    background-color: #fff;
+    line-height: 1.8;
+
+    @include tab {
+        width: 100%;
+        margin: 0 auto;
+        padding: 35px 30px;
+    }
+}
+
+.p-service__text--reverse {
+    margin-right: 0;
+    margin-left: auto;
+
+}
+
+.p-service__bg {
+    width: 993px;
+    height: 465px;
+    position: absolute;
+    top: 5%;
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/service_guide_bg.png);
+    z-index: -100;
+
+    @include tab {
+        display: none;
+    }
+}
+
+.p-service__bg--reverse {
+    right: 0;
+
+    @include tab {
+        display: none;
+    }
+}

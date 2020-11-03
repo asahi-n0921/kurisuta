@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+.Concept__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.Concept__lead {
+    margin: 30px auto;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+
+    @include sp {
+        font-size: 20px;
+    }
+}
+
+.Concept__text,
+.Concept__img {
+    width: 45%;
+    margin: 0 auto;
+
+    @include sp {
+        width: 100%;
+        margin: 15px auto;
+    }
+}

@@ -1,0 +1,43 @@
+/**
+ * #Section
+ */
+
+.p-recruit {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/info_bg.png);
+    background-size: cover;
+    background-position: center;
+
+    @include sp {
+        padding: 50px 45px;
+    }
+}
+
+.p-recruit__sub {
+    font-size: .9rem;
+    color: #000;
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+
+    @include sp {
+    bottom: -100%;
+    right: -3%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    }
+
+    @include se {
+        right: -15%;
+    }
+}
+
+.p-recruit__text {
+    margin: 60px auto;
+    font-size: 1.1rem;
+    text-align: center;
+
+    @include sp {
+        font-size: 1.4rem;
+    }
+}

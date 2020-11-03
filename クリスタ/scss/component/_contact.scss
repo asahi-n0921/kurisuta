@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+
+.Contact__form {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Contact__item {
+    margin: 25px auto;
+}
+
+.Contact__title {
+    margin: 10px auto;
+    display: block;
+}
+
+.Contact__field {
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+.Contact__field--large {
+    height: 170px;
+}
+
+.Contact__btn--area {
+    margin: 25px auto;
+    text-align: center;
+}
+
+.Contact__btn {
+    padding: 20px 90px;
+    background-color: #1B1310;
+    border: 1px solid #1B1310;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Contact__btn:hover {
+    opacity: .7;
+    background-color: #fff;
+    color: #000;
+}

@@ -1,0 +1,126 @@
+/**
+ * #Button
+ */
+$my-button-pill-base: 0 !default;
+$my-button-pill-round: 3em !default;
+
+/**
+ * ベーシックなボタンオブジェクトです。
+ * `<a>`, `<button>`, `<input>`要素のスタイルをリセットしています。
+ * サイズやスタイルの変更はモディファイアクラスを指定します。
+ * [DEMO](https://jsfiddle.net/manabuyasuda/yoLg0g9h/2)
+ *
+ * <div class="l-page-content">
+ *   <a href="#" class="c-button [c-button--full]">First Button</a>
+ *   <button class="c-button [c-button--full]">Second Button</button>
+ *   <input type="button" value="Button" class="c-button [c-button--full]" />
+ * </div>
+ */
+.c-button {
+    max-width: 160px;
+    display: block;
+    margin: 0;
+    padding: 12px;
+    border: none;
+    // border-radius: $my-base-round;
+    color: inherit;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    appearance: none;
+    color: #fff;
+    background-color: #000;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+    &[disabled],
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+.c-button__link02 {
+    padding: 12px 45px;
+    font-size: 23px;
+    color: #fff;
+    background-color: #4175EE;
+    border-radius: 50px;
+
+    @include sp {
+        font-size: 20px;
+    }
+	
+	@include se {
+		font-size: 16px;
+	}
+}
+
+.c-button__link03 {
+    padding: 10px 35px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4175EE;
+    border-radius: 50px;
+}
+
+.c-button--full {
+    width: 100%;
+}
+
+.c-button--circle {
+    border-radius: 50%;
+}
+
+
+.c-button--primary,
+.c-button--secondary {
+    padding: 5px 40px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.7;
+    color: #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform .5s ease 0s, background-color .5s;
+}
+
+.c-button--primary {
+    background-color: #DC5050;
+
+    @include sp {
+        margin-top: 120px;
+        padding: 5px 100px;
+    }
+	
+	@include se {
+    margin-top: 30px;
+    padding: 5px 50px;
+    }
+}
+
+/**
+ * カプセル状の錠剤のような形をしたボタンコンポーネントです。
+ */
+.c-button--pill {
+    border-radius: $my-button-pill-round;
+}
+
+.c-button--pill-right {
+    border-radius: $my-button-pill-base $my-button-pill-round $my-button-pill-round $my-button-pill-base;
+}
+
+.c-button--pill-center {
+    border-radius: $my-button-pill-base;
+}
+
+.c-button--pill-left {
+    border-radius: $my-button-pill-round $my-button-pill-base $my-button-pill-base $my-button-pill-round;
+}

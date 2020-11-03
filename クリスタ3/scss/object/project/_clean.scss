@@ -1,0 +1,78 @@
+/**
+ * #Clean
+ */
+
+.p-clean {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/service_bg.png);
+    background-size: cover;
+    background-position: center;
+
+    @include tab {
+        padding: 50px 20px;
+    }
+}
+
+.p-clean__item {
+    width: 30%;
+    margin: 40px 1em;
+    text-align: center;
+
+    @include tab {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    &:nth-child(1) {
+        @include tab {
+            margin: 40px auto 20px;
+        }
+    }
+
+}
+
+.p-clean__img {
+    width: 100%;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+
+    @include tab {
+        height: 50vh;
+    }
+
+    @include sp {
+        height: 230px;
+    }
+}
+
+.p-clean__img-1 {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/clean_01.png);
+}
+.p-clean__img-2 {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/clean_02.png);
+}
+.p-clean__img-3 {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/clean_03.png);
+}
+.p-clean__img-4 {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/clean_04.png);
+}
+.p-clean__img-5 {
+    background-image: url(http://reijyoukai.co.jp/wordpress/wp-content/themes/reijyoukai/img/service/clean_05.png);
+}
+
+.p-clean__text {
+    width: 95%;
+    height: 560px;
+    margin: -30px auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    @include tab {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 30px 15px;
+    }
+}

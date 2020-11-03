@@ -1,0 +1,46 @@
+/**
+ * #Item
+ */
+
+.p-item {
+    max-width: 300px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 8px 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+
+    @include sp {
+        max-width: 165px;
+        font-size: .85rem;
+        margin: 5px 0;
+    }
+	
+	@include se {
+		max-width: 130px;
+	}
+}
+
+.p-item--first {
+    background-color: #4175EE;
+}
+
+.p-item--second {
+    background-color: #71B1FD;
+}
+
+.u-mt-contact > .p-item:nth-child(1),
+.u-mt-contact > .p-item:nth-child(2),
+.u-mt-contact > .p-item:nth-child(3),
+.u-mt-contact > .p-item:nth-child(4),
+.u-mt-contact > .p-item:nth-child(5),
+.u-mt-contact > .p-item:nth-child(6) {
+
+    @include sp {
+        max-width: 100%;
+        margin: 5px auto;
+    }
+}

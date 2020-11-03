@@ -1,0 +1,45 @@
+/**
+ * #Col
+ */
+
+/**
+ * レスポンシブに対応した`width`プロパティを指定するヘルパークラスです。
+ * https://github.com/csswizardry/frcss/blob/master/_trumps.widths.scss
+ */
+
+// @example css - CSS output
+//
+// .u-col-11of12 { width: 91.66667% !important; }
+// .u-col-12of12 { width: 100% !important; }
+// @media screen and (min-width: 400px) {
+//     .u-col-1of12-sm { width: 8.33333% !important; }
+//     .u-col-2of12-sm { width: 16.66667% !important; }
+
+
+// 取得したいカラム数をリスト形式で指定します。
+// 例えば`1 2`を指定すると1/1, 1/2, 2/2の`width`を取得できます。
+$my-col-cols: 12 !default;
+
+// @param {Number} $cols - 取得したいカラム数を指定します。
+// @param {String} $breakpoint(null) - ブレイクポイント用のキーワードを付与します。
+// @requires {List} $my-col-cols - 取得するカラム数を定義しています。
+@mixin my-col($cols, $breakpoint: null) {
+    @each $col in $cols {
+        @for $i from 1 through $col {
+            .u-col-#{$i}of#{$col}#{$breakpoint} {
+                width: percentage($i / $col) $important;
+            }
+        }
+    }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include my-col($my-col-cols);
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $my-breakpoints {
+    @media #{$breakpoint} {
+        @include my-col($my-col-cols, -#{$name})
+    }
+}

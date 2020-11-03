@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.Works {
+    background-image: url(../../img/works-bgi@2x.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.Works__list {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
