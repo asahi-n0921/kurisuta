@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.Service__list {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+
+    @include sp {
+        display: block;
+    }
+}
+
+.Service__list:nth-child(odd) {
+    flex-direction: row-reverse;
+} 
+
+.Service__img {
+    width: 45%;
+    margin: 0 auto;
+
+    @include sp {
+        width: 100%;
+    }
+}
+
+.Service__text {
+    width: 50%;
+    margin:  0 auto;
+
+    @include sp {
+        width: 100%;
+    }
+}

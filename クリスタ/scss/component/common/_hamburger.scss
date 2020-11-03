@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.default {
+    color: #333;
+}
+
+.Hamburger {
+    width: 32px;
+    height: 64px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+
+    @include sp {
+        display: block;
+    }
+}
+
+.Hamburger__line {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 32px;
+    height: 1px;
+    background-color: #fff;
+}
+
+
+.Hamburger__line--top {
+    top: calc(50% - 10px);
+
+}
+
+.Hamburger__line--middle {
+    top: 50%;
+
+}
+
+.Hamburger__line--bottom {
+    top: calc(50% + 10px);
+}
+
+.Hamburger__line--top.active {
+    transform: rotate(45deg);
+    top: calc(50% - 0px);
+
+}
+
+.Hamburger__line--middle.active {
+    width: 0;
+}
+
+.Hamburger__line--bottom.active {
+    transform: rotate(-45deg);
+    top: calc(50% + 0px);
+
+}
